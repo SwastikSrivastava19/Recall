@@ -1,0 +1,101 @@
+.navRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: color 0.15s ease, transform 0.15s ease;
+  text-decoration: none;
+  padding: 0.25rem 0;
+}
+
+.backLink:hover {
+  color: var(--text-primary);
+  transform: translateX(-2px);
+}
+
+.backLink:active {
+  transform: translateX(-3px);
+}
+
+.navActions {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.navBtnSecondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  padding: 0.45rem 0.85rem;
+  border-radius: 6px;
+  background-color: var(--btn-secondary-bg);
+  border: 1px solid var(--btn-secondary-border);
+  color: var(--btn-secondary-text);
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.navBtnSecondary:hover {
+  background-color: var(--btn-secondary-hover);
+  color: var(--text-primary);
+  border-color: var(--border-medium);
+}
+
+.navBtnSecondary:active {
+  background-color: var(--btn-secondary-active);
+  transform: translateY(1px);
+}
+
+.navBtnPrimary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  padding: 0.45rem 0.95rem;
+  border-radius: 6px;
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  border: 1px solid transparent;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.navBtnPrimary:hover {
+  background-color: var(--btn-primary-hover);
+}
+
+.navBtnPrimary:active {
+  background-color: var(--btn-primary-active);
+  transform: translateY(1px);
+}
+
+@media (max-width: 640px) {
+  .navRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.85rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .navActions {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 0.5rem;
+  }
+}

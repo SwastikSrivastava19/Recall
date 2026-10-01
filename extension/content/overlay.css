@@ -1,0 +1,8 @@
+/* Recall Capture Overlay Stylesheet */
+#recall-capture-overlay-host {
+  all: initial;
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 2147483647;
+}

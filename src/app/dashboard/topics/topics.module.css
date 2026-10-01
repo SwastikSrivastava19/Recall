@@ -1,0 +1,575 @@
+.pageContainer {
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  padding: 3rem 1.5rem 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contentWrapper {
+  width: 100%;
+  max-width: 760px;
+}
+
+/* Nav & Header */
+.navRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: color 0.15s ease;
+  text-decoration: none;
+}
+
+.backLink:hover {
+  color: var(--text-primary);
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logBtnSmall {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.logBtnSmall:hover {
+  background-color: var(--btn-primary-hover);
+}
+
+.header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.brandLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.4rem;
+}
+
+.title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+}
+
+.countBadge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+  background-color: var(--bg-muted);
+  border: 1px solid var(--border-medium);
+  color: var(--text-secondary);
+}
+
+.subtitle {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* Ranked List Section */
+.rankedCard {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 1.75rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.cardHeaderRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.cardTitle {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.legendRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.legendDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+}
+
+.legendDotDanger {
+  background-color: #ef4444;
+}
+
+.legendDotWarning {
+  background-color: #f59e0b;
+}
+
+.legendDotNormal {
+  background-color: #e4e4e7;
+}
+
+/* Topic Rows */
+.topicRowsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.topicRow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.topicInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.topicNameGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.rankNumber {
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  width: 16px;
+}
+
+.topicName {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-transform: capitalize;
+}
+
+.problemCount {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.topicStatsGroup {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hintFreeLabel {
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  color: var(--text-secondary);
+}
+
+.scoreLabel {
+  font-size: 0.875rem;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--text-primary);
+  min-width: 44px;
+  text-align: right;
+}
+
+/* Horizontal Bar */
+.barTrack {
+  width: 100%;
+  height: 10px;
+  background-color: var(--bg-muted);
+  border-radius: 9999px;
+  overflow: hidden;
+  position: relative;
+}
+
+.barFill {
+  height: 100%;
+  border-radius: 9999px;
+  transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Meaningful Color Tints */
+.barFillDanger {
+  background-color: #ef4444; /* subtle danger tint */
+}
+
+.barFillWarning {
+  background-color: #f59e0b; /* subtle amber warning tint */
+}
+
+.barFillNormal {
+  background-color: #e4e4e7; /* default monochrome light grey */
+}
+
+/* Dynamic Takeaway Card */
+.takeawayCard {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-medium);
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+}
+
+.takeawayIconCircle {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background-color: var(--bg-muted);
+  border: 1px solid var(--border-medium);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.takeawayTextGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.takeawayTitle {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.takeawaySentence {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+/* Insufficient Data Section */
+.insufficientSection {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.insufficientHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.85rem;
+}
+
+.insufficientTitle {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+}
+
+.insufficientSubtitle {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.insufficientGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.insufficientBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.65rem;
+  border-radius: 6px;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  font-size: 0.75rem;
+}
+
+.insufficientTopicName {
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-transform: capitalize;
+}
+
+.insufficientCount {
+  font-size: 0.6875rem;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+}
+
+/* LOADING SKELETONS */
+.skeletonCard {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.skeletonHeader {
+  height: 20px;
+  width: 40%;
+}
+
+.skeletonRow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.skeletonRowTop {
+  display: flex;
+  justify-content: space-between;
+}
+
+.skeletonRowTitle {
+  height: 16px;
+  width: 120px;
+}
+
+.skeletonRowStats {
+  height: 16px;
+  width: 80px;
+}
+
+.skeletonBar {
+  height: 10px;
+  width: 100%;
+}
+
+/* EMPTY STATE */
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 4.5rem 1.5rem;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+}
+
+.emptyIconCircle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--bg-muted);
+  border: 1px solid var(--border-medium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  color: var(--text-primary);
+}
+
+.emptyTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.emptySubtitle {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  max-width: 400px;
+  margin-bottom: 1.75rem;
+  line-height: 1.6;
+}
+
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 1.25rem;
+  border-radius: 6px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  border: 1px solid transparent;
+  transition: all 0.15s ease;
+  text-decoration: none;
+}
+
+.btnPrimary:hover {
+  background-color: var(--btn-primary-hover);
+}
+
+/* ERROR STATE */
+.errorState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 3.5rem 1.5rem;
+  background-color: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+}
+
+.errorIconCircle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-medium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.errorTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.4rem;
+}
+
+.errorMessage {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  max-width: 400px;
+  margin-bottom: 1.5rem;
+}
+
+/* SIMULATION TOOLBAR */
+.simToolbar {
+  position: fixed;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(18, 18, 21, 0.92);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-medium);
+  border-radius: 9999px;
+  padding: 0.35rem 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  z-index: 100;
+}
+
+.simLabel {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  padding: 0 0.5rem;
+}
+
+.simBtn {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  padding: 0.35rem 0.65rem;
+  border-radius: 9999px;
+  color: var(--text-secondary);
+  transition: all 0.15s ease;
+}
+
+.simBtn:hover {
+  color: var(--text-primary);
+}
+
+.simBtnActive {
+  background-color: var(--text-primary);
+  color: var(--bg-primary);
+  font-weight: 600;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 640px) {
+  .pageContainer {
+    padding: 1.5rem 1rem 5rem;
+  }
+
+  .topicInfo {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .topicStatsGroup {
+    align-self: flex-start;
+    gap: 0.75rem;
+  }
+
+  .legendRow {
+    display: none;
+  }
+
+  .takeawayCard {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

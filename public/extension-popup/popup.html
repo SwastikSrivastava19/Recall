@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recall</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <!-- Header row: Recall logo/wordmark (small) + sign-in status -->
+    <header class="header">
+      <div class="brand">
+        <span class="logo-text">RECALL</span>
+      </div>
+      <div class="auth-status" id="header-auth-status">
+        <span class="status-dot active" id="status-dot"></span>
+        <span class="status-label" id="status-label">Signed in</span>
+      </div>
+    </header>
+
+    <!-- State 1: Loading Skeleton -->
+    <div id="view-loading" class="view">
+      <div class="skeleton-numeral skeleton-shimmer"></div>
+      <div class="skeleton-line skeleton-shimmer"></div>
+      <div class="skeleton-list">
+        <div class="skeleton-row skeleton-shimmer"></div>
+        <div class="skeleton-row skeleton-shimmer"></div>
+        <div class="skeleton-row skeleton-shimmer"></div>
+      </div>
+      <div class="skeleton-stat skeleton-shimmer"></div>
+      <div class="skeleton-btn skeleton-shimmer"></div>
+    </div>
+
+    <!-- State 2: Not Signed In (shows only sign-in button below header) -->
+    <div id="view-unauth" class="view hidden">
+      <div class="unauth-box">
+        <p class="unauth-text">Sign in to sync your revision queue and track readiness.</p>
+        <button id="btn-signin" class="btn-primary">Sign in to Recall</button>
+      </div>
+    </div>
+
+    <!-- State 3: Error State -->
+    <div id="view-error" class="view hidden">
+      <div class="error-box">
+        <p class="error-title">Unable to connect</p>
+        <p class="error-desc" id="error-desc">Could not reach the Recall server.</p>
+        <button id="btn-retry" class="btn-secondary">Retry</button>
+      </div>
+    </div>
+
+    <!-- State 4 & 5: Authenticated Main View -->
+    <div id="view-main" class="view hidden">
+      <!-- Prominent Numeral & Quick Context -->
+      <section class="hero-section">
+        <div class="numeral-container">
+          <span class="due-numeral" id="due-count-numeral">0</span>
+        </div>
+        <p class="due-context" id="due-context-text">All caught up</p>
+      </section>
+
+      <!-- Empty State (0 due) -->
+      <div id="section-empty" class="empty-section hidden">
+        <div class="empty-icon-circle">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </div>
+        <p class="empty-subtext">Nothing due today. Memory traces are reinforced.</p>
+      </div>
+
+      <!-- Populated State: Top 3 due items + optional +X more -->
+      <div id="section-due-list" class="due-list-section">
+        <div class="due-rows-list" id="due-rows-container">
+          <!-- Dynamically populated up to 3 compact rows -->
+        </div>
+        <button id="btn-more-due" class="more-due-link hidden">+0 more due today</button>
+      </div>
+
+      <!-- Quick Stat Line: Overall Readiness Percentage only -->
+      <div class="stat-row">
+        <span class="stat-dot"></span>
+        <span class="stat-text" id="readiness-stat-text">0% ready</span>
+      </div>
+
+      <!-- Bottom Persistent Button: Open Dashboard -->
+      <footer class="footer-section">
+        <button id="btn-open-dashboard" class="btn-dashboard">
+          <span>Open Dashboard</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+        </button>
+      </footer>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

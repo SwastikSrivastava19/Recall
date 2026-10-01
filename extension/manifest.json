@@ -1,0 +1,60 @@
+{
+  "manifest_version": 3,
+  "name": "Recall — Spaced Repetition for LeetCode",
+  "version": "1.0.0",
+  "description": "Spaced repetition for DSA problems. Automatically detects accepted LeetCode solves and schedules retention reviews.",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "Recall",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "48": "icons/icon-48.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "storage",
+    "identity"
+  ],
+  "oauth2": {
+    "client_id": "481091830488-uv2jprr8kjl2cm1chq8e8918mntpgo4h.apps.googleusercontent.com",
+    "scopes": [
+      "openid",
+      "email",
+      "profile"
+    ]
+  },
+  "host_permissions": [
+    "*://leetcode.com/problems/*",
+    "*://*.leetcode.com/problems/*",
+    "http://localhost:3000/*",
+    "https://utxyhzwdxlxpxtwifgrg.supabase.co/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://leetcode.com/problems/*",
+        "*://*.leetcode.com/problems/*"
+      ],
+      "js": ["content/leetcode.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "icons/icon-16.png",
+        "icons/icon-48.png",
+        "icons/icon-128.png"
+      ],
+      "matches": ["*://*.leetcode.com/*", "http://localhost:3000/*"]
+    }
+  ]
+}
